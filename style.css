@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #000;
+}
+
+.header {
+    min-height: 100vh;
+    height: 20em;
+    padding: 2em;
+    background-color:#000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.title {
+    font-size: 3em;
+}
+
+.fixed-scroll {
+    min-height: 100vh;
+    color: #fff;
+    margin-bottom: 100vh;
+}
+
+.fixed-background {
+    padding: 2em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.fixed-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30em;
+    min-height: 100vh;
+    object-fit: cover;
+    transition: opacity 3000ms;
+    opacity: 0;
+}
+
+.fixed-content {
+    position: relative;
+    height: 30em;
+    min-height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+}
+
+.fixed-content:nth-child(1) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
+
+.fixed-content:nth-child(2) {
+    flex-direction: flex-end;
+}
+
+.fixed-content:nth-child(5) {
+    flex-direction: row-reverse;
+}
+
+.panel {
+    width: 90%;
+    max-width: 25em;
+    padding: 2.5em;
+    background: rgba(40, 40, 40, .3);
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter: blur(20px);
+    border-radius: 5px;
+}
+
+.panel h2 {
+    font-size: 2em;
+}
+
+.panel p {
+    line-height: 32px;
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+
+.bg-active {
+    z-index: 2 !important;
+    opacity: 1 !important;
+}
+
+.about {
+    color: #fff;
+    padding: 2.5em;
+}
+
+.about p {
+    line-height: 30px;
+    font-size: 1.1em;
+    margin: 2em 0;
+}
+
+.navigation nav {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    margin: 0;
+}
+
+.navigation nav, a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation a:nth-child(1):hover {
+    background: linear-gradient(#f3d1a5, #fff, #f3d1a5);
+    color: #000;
+    height: 40px;
+    padding: 10px 5px;
+    border-radius: 40%;
+    transition: .7s;
+}
+.navigation a:nth-child(2):hover {
+    background: linear-gradient(#f3d1a5, #fff, #f3d1a5);
+    color: #000;
+    height: 40px;
+    padding: 10px 5px;
+    border-radius: 40%;
+    transition: .7s;
+}
+.navigation a:nth-child(3):hover {
+    background: linear-gradient(#f3d1a5, #fff, #f3d1a5);
+    color: #000;
+    height: 40px;
+    padding: 10px 5px;
+    border-radius: 40%;
+    transition: .7s;
+}
+
+.bar {
+    margin: 25px 0;
+    opacity: .3;
+}
+
+.groupe {
+    width: 30px;
+    background: green;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    opacity: .7;
+}
+
+.groupe:hover {
+    transform: scale(1.5);
+    transition: .7s;
+    opacity: 1;
+}
+
+@media screen and (max-height: 450px) {
+    .fixed-scroll {
+        margin-bottom: 30em;
+    }
+}
+
+.galerie {
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15vh 0;
+}
+
+.menu {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    margin: 10px;
+    display: flex;
+    width: 25%;
+}
+
+.column img {
+    opacity: .8;
+    cursor: pointer;
+    height: 100px;
+    width: 100%;
+}
+
+.column img:hover  {
+    opacity: 1;
+}
+
+.container {
+    position: relative;
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    animation: anim 1s ease-in-out forwards;
+}
+
+@keyframes anim {
+    0% {
+        width: 0;
+    }
+}
+
+.container img {
+    width: 100%;
+}
+
+#imgtext {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    color: #030303;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#expendedImg {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
